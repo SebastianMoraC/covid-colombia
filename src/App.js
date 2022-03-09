@@ -1,14 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [data, setData] = useState(0);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        {data}
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -20,6 +21,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
