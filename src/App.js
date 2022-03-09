@@ -12,9 +12,8 @@ const App = () => {
       `https://www.datos.gov.co/resource/gt2j-8ykr.json?departamento_nom=${departament}&$limit=${maxRegister}`
     )
       .then((res) => res.json())
-      .then((data) => setData(data))
+      .then((data) => setData(data));
   };
-
 
   return (
     <div className="App">
@@ -22,13 +21,23 @@ const App = () => {
         <h1>Covid-19 - Colombia</h1>
       </header>
       <section>
-        <form className="form"
+        <form
+          className="form"
           onSubmit={(e) => {
             e.preventDefault();
             filterByDepartment();
           }}
         >
-          <input type="number" value={maxRegister} onChange={(e)=>{setMaxRegister(e.target.value)}}></input>
+          <label htmlFor="maxRegister">Max of Register</label>
+          <input
+            id="maxRegister"
+            type="number"
+            value={maxRegister}
+            min="0"
+            onChange={(e) => {
+              setMaxRegister(e.target.value);
+            }}
+          ></input>
           <select
             name="select"
             onChange={(e) => {
@@ -38,7 +47,7 @@ const App = () => {
             <option value="AMAZONAS">Amazonas</option>
             <option value="ANTIOQUIA">Antioquia</option>
             <option value="ARAUCA">Arauca</option>
-            <option value="ATLÁNTICO">Atlántico</option>
+            <option value="ATLANTICO">Atlántico</option>
             <option value="BOLIVAR">Bolívar</option>
             <option value="BOYACÁ">Boyacá</option>
             <option value="CALDAS">Caldas</option>
