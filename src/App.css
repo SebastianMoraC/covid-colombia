@@ -1,0 +1,18 @@
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form input{
+  margin: 16px;
+}
+.form button{
+  margin-left: 16px;
+  border-radius: 8px;
+}
